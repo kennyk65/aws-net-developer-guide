@@ -23,10 +23,10 @@ using (AmazonEC2Client ec2Client = new AmazonEC2Client(RegionEndpoint.USWest2))
 
 ### New Region using RegionEndpoint class<a name="w4aac11c25c11b7"></a>
 
-This example shows you how to construct a new Region endpoint by using [RegionEndpoint\.GetBySystemName](https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/Amazon/MRegionEndpointGetBySystemNameString.html)\.
+From time to time AWS creates new regions.  These regions are not represented in existing versions of the RegionEndpoint class.  To accomodate this possiblity, construct a new Region endpoint by using [RegionEndpoint\.GetBySystemName](https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/Amazon/MRegionEndpointGetBySystemNameString.html)\.
 
 ```
-var newRegion = RegionEndpoint.GetBySystemName("us-west-new");
+var newRegion = RegionEndpoint.GetBySystemName("ap-shangrila-new");
 using (var ec2Client = new AmazonEC2Client(newRegion))
 {
   // Make a request to EC2 in the new Region using ec2Client
